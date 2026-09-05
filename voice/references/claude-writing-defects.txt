@@ -1,0 +1,115 @@
+This document contains the writing voice rules that JL has saved for his AI assistant (Claude Code). They describe how Claude should match JL's prose style when drafting or extending text in his academic write-ups. The rules were built up from direct feedback: JL compared Claude's draft paragraphs against his own rewrites and identified recurring tics — things Claude does by default that JL never does, and things JL does that Claude tends to omit. The document includes a do/don't list, a list of banned words with reasons, and concrete before/after examples showing Claude's draft alongside JL's rewrite. A hook in Claude's environment enforces the worst offenders automatically on every file edit.
+
+---
+
+When drafting prose for JL's write-ups (especially `claude_writeup/*`), match his voice rather than defaulting to Claude's. Audit drafts against the list below before returning them.
+
+**Enforced since 2026-06-14:** a PostToolUse hook (`~/.claude/hooks/voice_check.py`, registered in `~/.claude/settings.json`) scans every `.tex`/`.md` edit for the worst banned words (anchor, clean/cleanest, reads as/off, filler adverbs, the picture/the story, built around, re-enters, converts X into Y, pairs naturally) and blocks with exit 2 until fixed. The repo-root `WAWex/CLAUDE.md` carries the same checklist and is auto-loaded every session. `CLAUDE.md`, this file, and anything under `/memory/` are exempt from the scan. The hook is a backstop — the words got into the §5.2 draft because a prior instance worked off the one-line MEMORY.md index without opening this file; the fix is that the checklist is now always in context, not optionally recalled.
+
+**Do:**
+- Open each section/subsection with a paragraph that summarizes the whole subsection — all its main points (limitation/central claim, consequences, call to future work) — before any body paragraph elaborates one. The opener is the subsection's abstract, not a runway into it (see [[feedback_thesis_sentences]]).
+- Open each paragraph with a flat declarative thesis sentence (see [[feedback_thesis_sentences]]).
+- Write in the first person where the author is making a choice or a concession ("I therefore propose", "I leave those developments for a further paper", "I'm going to have to eat this assumption").
+- Handle caveats inline and briefly, then move on. He doesn't stage caveats into First/Second/Third structures.
+- Use conversational citations: "(See Wk0's writeup)", "(see also Parsons and Jamison, work in progress)", "(Mood et al, 2019)".
+- Use casual connectives: "For instance", "But", "However", "In other words", "In one crude form", "we might expect".
+- For asides, prefer single hyphen-spaces (` - `) or double-hyphens (`--`) over em-dashes; if using em-dashes, do not nest them.
+
+**Don't:**
+- Bold key claims to emphasise them. He doesn't bold anything in running prose.
+- Use block quotes of his own past statements; it reads as padding.
+- Use "First / Second / Third" enumeration structures inside paragraphs.
+- Use contrast framing in any form: "not X, but Y"; "that is X, not Y"; "X — not Z". Write the positive claim and stop. The redundant negative is always cuttable.
+- Use contrast framing to define something ("present but circumscribed", "simple but powerful"). Define things directly by what they are.
+- End paragraphs with "...and X is the work" or similar Claude rhetorical closures.
+- Use the filler superlative "cleanest" (see [[feedback_avoid_cleanest]]).
+- Use the adjective "clean" ("a clean solution", "a clean single ancestor", "the cleanest illustration"). Cut it entirely; do not substitute another word. This is a Claude tic JL has called out as overused.
+- Add padding clauses that state the obvious: "and they are not equivalent", "which is important", "as we will see". Trust the reader.
+- **Announce importance instead of stating the thing.** "X matters", "one gap matters", "what matters is X", "this is the key point" are redundant framing — they assert that something is important rather than just saying it. Delete the announcement and state X directly. (Flagged 2026-06-14: Claude drafted "For our purposes one gap matters. The authors decline to weight...". JL cut the announcement: "A slight limitation for the purposes of our project is that the authors don't commit to a method for weighting the different affective intensities against each other...". State the limitation; don't preface it by declaring it matters.)
+- Use filler adverbs: "coherently", "naturally", "clearly", "simply".
+- Use metaphoric spatial verbs when a direct verb exists: "sits", "lives", "pairs naturally with". Say what you mean directly.
+- Banned words JL never/rarely uses; when tempted by one, there is always a plainer way and it usually takes fewer words, so rewrite the clause: "tracks" (verb, e.g. "the weight tracks proximity" -> "the closer X is, the more weight it gets"), "carry"/"carries" (verb, e.g. "carry the largest welfare" -> "have the largest welfare"), "anchor" (e.g. "I anchor humans at one" -> "I set humans to one"). Treat the urge to use these as a signal the sentence is not yet plain.
+- **Ornamental metaphor** (JL's two-word flag): no figurative scaffolding when a literal statement works. Doesn't work: "the compression is the spine and the figures hang off it"; any skeleton/architecture/spine imagery. Works: "welfare ranges compress the differences in capacity, so that population decides the aggregate." State the relation plainly with no image attached.
+- **Manufactured drama** (JL's two-word flag): no engineered reveals or conflict framing in an expository passage; he does not want to visualise drama (e.g. an election conflict) in a results readout. Doesn't work: "The move to welfare ranges leaves one finding standing and overturns another"; cleft "What changes is the order among the remaining groups"; end-of-sentence kickers like "fall behind both wild birds and the largest farmed groups here." Works: "Under welfare ranges, the largest contributors stay the same while the order beneath them changes." State what happened and stop.
+- Use informal figurative nouns when a literal one is available: "the picture" → "the results"; "the story" → "the findings". Use the literal word.
+- Overuse punctuation. When a colon in running prose can be replaced with "is" or "are", replace it. Where a hyphen or em-dash separates a clause and a word can substitute, use the word.
+- Begin a sentence with a verb or dangling participle when subject-verb-object order is available. "Missing from this accounting: X" should be "This accounting omits X."
+- Be concise to the point of sparsity. Remove every word that doesn't earn its place.
+
+**Why:** On 2026-05-27 JL did a side-by-side voice comparison between his §0 and Claude's §2 of the evoWS Version 2 write-up; the §2 paragraphs hit none of his stylistic markers and he asked for the voice rules to be saved so future drafts match without re-explaining.
+
+**How to apply:** When asked to draft or extend prose in a JL write-up, run the draft through the do/don't list. If unsure which paragraph to match, ask him to point at a sample of his own and say "match this." Cross-reference [[feedback_thesis_sentences]] and [[feedback_avoid_cleanest]].
+
+---
+
+## Concrete before/after (Claude's draft → JL's rewrite), 2026-06-13
+
+JL's verdict on the drafts that produced these: "very bad — you take a really long time to get to the point, lots of fluffy filler. Be as concise as humanly possible. Trim extremely aggressively." Use these as the calibration target.
+
+**Concision test:** if deleting a sentence loses no distinct claim, delete it. Aim for fewer sentences, each making a different claim. A paragraph that makes 5 claims in 5 sentences beats one that makes 2 claims in 5.
+
+### Tic 1 — Elegant variation (the worst one). State a point ONCE.
+Claude restates a single idea in 3–4 reworded sentences:
+> "The observations are stretched to fill the range, rather than the range being used to ask where a given observation places the animal. A valid score would begin from the range and locate each condition on it. CE begins from the conditions and assigns numbers that happen to cover the range. No measurement model connects the two, so where any score falls on the scale is close to arbitrary."
+
+JL says it once and moves to the next claim:
+> "submetrics were chosen based on being sufficiently observable proxies for a welfare state and then 'stretched to fit' the range."
+
+Fix: pick the sharpest phrasing, delete the restatements. When tempted to rephrase the last sentence, write the *next* claim instead. (In the same passage, the saved space let JL add the two real validity conditions — coverage of all welfare levels; equal unit-changes across submetrics — content Claude's version never reached.)
+
+### Tic 3 — Inanimate agents + vague verbs (flagged 2026-06-13, on the evolutionary-welfare-score equation prose)
+
+JL's complaint: "You're doing that metaphor thing again and using unclear, vague verbs instead of what's actually going on."
+
+The rule: keep the grammatical subject something that literally acts — selection, evolution, the animal, the perceptible state, I/we. Do NOT let abstractions (valence, the score, the function $g$, "the Project") perform human actions. And use concrete causal verbs, not metaphors-for-verbs.
+
+Claude → JL, same ideas:
+- "the conditional expectation is what valence **is taken to track**" (passive, hidden actor) → "we might expect it to track the expected reproductive success" (active, hedged with "we might expect")
+- "valence **reads** as a signal of expected fitness" → "things that **signal** that their reproductive future is favourable" (the *state* signals; nothing "reads")
+- "the function $g$ **converts what valence tracks into what the animal feels**" (abstraction acting on abstraction) → "how strongly a given observable state **maps onto** expected reproductive fitness"
+- "reproduction is what the score **is built around**" → state it literally (reproduction is the object; survival is instrumental to it)
+- "This is where the Welfare Footprint Project **re-enters**, as the calibration step" → don't stage a concept as a character entering/returning
+- "felt valence is a **transformed image** of expected fitness" → ornamental metaphor; say it plainly
+
+Preferred verbs (JL's own): "maps onto", "turns X into Y", "signals", "feels". Banned-in-context: "reads as", "converts … into", passive "is taken to …", "re-enters"/"enters" for concepts, "built around".
+
+Correction to the banned-words list above: **"track" is acceptable** in the specific technical phrase "valence tracks expected fitness" — JL uses it himself (Wk4+ §47, §51). The earlier blanket ban on "tracks" applies only to vague/ornamental uses elsewhere ("the weight tracks proximity").
+
+When you must introduce an abstraction, gloss it immediately in plain words, JL's em-dash habit: "the welfare function --- the mapping from experiences, states, and behaviours to a felt internal experience". And when introducing a mechanism, walk the reader through with a concrete illustration (the dog's leg wound; the farmed chicken vs red junglefowl).
+
+Bigger point JL made the same day: **prefer lifting his own prose from companion write-ups (e.g. Wk4+) over rewriting it in Claude's words.** When source text exists in his voice, copy and lightly trim rather than paraphrase.
+
+### Tic 2 — Padding: definitions, signposting, self-referential framing. Cut all three.
+Claude:
+> "The index's central problem is one of validity. A measure is valid when it captures what it is meant to capture, and the CE index is meant to record where an animal falls on its own welfare range... CE aims for range-relativity, which here is close to aiming for validity itself, since the construct just is an animal's position on its range. It does not get there, for two reasons."
+
+JL:
+> "I'm most concerned about the index's construct validity. The CE index is meant to record where an animal's experience falls on its species' welfare range, from its worst possible experience to its best. But the CE team doesn't justify why certain conditions are given certain scores."
+
+Cuts to copy:
+- Definition of a term the reader knows: "A measure is valid when it captures what it is meant to capture" — gone.
+- Meta-commentary on your own framing: "which here is close to aiming for validity itself" — gone.
+- Signposting: "It does not get there, for two reasons" / "The first reason is that" — gone. Make the claim directly.
+- Opening: replace an abstract noun-phrase subject ("The index's central problem is...") with the first-person stake ("I'm most concerned about..."). Get to the actual criticism by sentence two, with no windup.
+
+---
+
+## Concrete before/after #2 (Claude's §5.2 SWF-intro → JL's rewrite), 2026-06-15
+
+JL's verdict: "I'm so sick of your fluffy bullshit." His edit compressed ~6 sentences to 4 and stripped several tics. Calibration target for expository thesis prose.
+
+Claude:
+> "...harder to specify once animals enter, because three choices the human case lets us skip now have to be made: which component... None of these is a new kind of problem. Each has the same shape as a standard question in welfare economics, and the multi-species versions have already been posed and partly answered. What the literature does not supply is calibration - it fixes the structure of these functions without fixing the values of their parameters for animals. I set out the choices below as a starting point for future research..."
+
+JL:
+> "...harder to specify once animals are involved. We have to make decisions about what component... Existing literature poses and partly answers many of these questions, but it doesn't calibrate numbers. I set out some reasonable choices for social welfare functions below as a starting point for future calibration work."
+
+Rules extracted (apply on top of everything above):
+- **Compress idea-building to one sentence.** Where Claude scaffolds one idea across 3 sentences ("None of these is new" / "same shape as a standard question" / "what the lit doesn't supply is calibration"), JL wants one: "Existing literature poses and partly answers many of these questions, but it doesn't calibrate numbers." State the point once and move to the next claim.
+- **No cleft constructions.** "What the literature does not supply is calibration" → "it doesn't calibrate numbers." Generalises the existing "What changes is..." ban: any "What X is/does is Y" or "It is X that..." frame is padding; convert to direct subject-verb-object.
+- **Don't pre-count or pre-frame a list.** "three choices the human case lets us skip now have to be made:" → "We have to make decisions about...". Drop the count ("three") and the clever device ("the choices the human case lets us skip"); start a plain sentence and list.
+- **Don't gloss a term twice.** "calibration - it fixes the structure without fixing the values of their parameters" restates "calibration." Say it once: "it doesn't calibrate numbers."
+- **Semicolons joining two independent clauses in expository prose: cut.** JL's words: "ridiculous semicolons." Use a period or restructure.
+- **No "X is settled / Y is not" antithesis closer.** "The structure is settled; which denominator suits a multispecies world is not" is contrast framing disguised as a summary - banned. If the open question needs stating, state it once and directly ("Which denominator suits a multispecies world is unsettled"); usually it's already obvious and the sentence should just go.
+- **No arch status-of-our-analysis closer.** "Our analysis takes a stand on neither" = useless padding. A plain concession JL writes himself ("Our analysis considers none of this") is fine; the knowing, arch version is not.
+- Concrete nouns over pronouns in the payoff sentence: "the choices below" → "some reasonable choices for social welfare functions below"; "future research" → "future calibration work."

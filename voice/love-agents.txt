@@ -1,0 +1,80 @@
+I love coding agents. Not because they connect to more tools or write code, but because they massively reduce the friction for delegating hard tasks to AIs (and sometimes code and tool connectors are useful for that purpose).
+
+Most of the value I get is from delegating them tasks I wouldn't do myself, either because they are:
+
+* Too technical, requiring expertise I lack  
+* Too small to do individually (e.g., automations)  
+* Too time-consuming  
+* Too demanding for my energy level at the moment  
+* Too vague to get started with on my own
+
+Your task today is to pick a valuable task you wouldn't do on your own and get it done with coding agents. Or at least get it started — this session is purposefully short.
+
+This can be challenging. You can't simply ask “Estimate the probability of a lone wolf terrorist attack that causes \+10k deaths in 2027” and expect to get a good result. You need to decompose that task in steps you can either trust or verify. 
+
+## Install a Coding Agent
+
+Install Claude for Desktop app, which can use your Claude subscription. If you find yourself hitting the rate limits more than once in a day, you should default to buying the [$200 personal subscription](https://claude.ai/upgrade). 
+
+### Claude Code for Desktop
+
+Install the app, give it access to (some of) your computer files, and set up permissions so it's less likely to take unwanted actions:
+
+1. Download [Claude app](https://claude.com/download) if you don't have it. Install the updates it offers if you have the app already  
+2. Sign in with your paid Anthropic account  
+3. Open settings (Cmd \+ , on Mac \[what's the key combo on windows?\]), select Claude Code, then toggle on "Allow auto permissions mode"  
+4. Close settings and click the "Code" icon next to "Chat" on the left sidebar  
+5. Select the following settings from the dropdowns around the chat input bar:  
+- Local (instead of Cloud or Default)  
+- An empty folder on your computer  
+- Auto mode
+
+## Your Task
+
+Pick something hard, and do it with AI. As a rough proxy, think of something that would take you 3+ hours if you tried doing it without coding agents.
+
+Use voice dictation (ie., the microphone icon) to give it as much context as you can to get started. Feed it some relevant GDocs and PDFs if you have them. 
+
+Here's an example from what I was working on this Saturday: [https://demo-site-amber-seven.vercel.app/](https://demo-site-amber-seven.vercel.app/) 
+
+Think on your own for 5 minutes about what you'd like to tackle. If you want inspiration, here's some examples I quickly brainstormed with Claude:
+
+* Help me figure out what the skeleton program for an EA Summit should be. Here's the things I've seen that I suspect work best... However, I'm still unclear on...  
+* Help me brainstorm possible patterns in free-text answers to spot underperforming OSP mentors. Here's a sample of feedback forms from the program. What I'm looking for is...  
+* I want to create a skill \[add link\] for making BOTECs of grants on... Here's a previous BOTEC I made, but we can't always apply that pattern because...  
+* Here's the priorities we're considering for Q3 (link to Gdocs)...  
+* \[coding app example?\]
+
+## Some tips
+
+You don't need these tips at all to get value out of coding agents (the mere belief that you can hand them harder tasks should be enough to power you through) but, still, maybe you'll get value out of some of these:
+
+1. **Speak your mind.** The AI doesn't need you to hand in a tidy, well-defined plan in advance. Just state the problem, say what you want, and be clear about your uncertainties.  
+     
+   See how much I hedge, ramble, and caveat in [my own work](https://demo-site-amber-seven.vercel.app/). Voice dictation is the perfect match for doing this. 
+
+2. **Break down the task.** For every piece of work, you must verify it, trust the AI to do it well, or don't care if the output is wrong.  
+     
+   When can you trust the AI? When you've seen it do well on something similar before. There's no general rule. You have to either try it yourself, hear it from others, or understand the task well enough to extrapolate from previous experience.    
+     
+   How do you verify an output? If it's code, try it and test it. Ask for the original source, clearly linked next to the output. Ask a different AI to critique the original (eg., “dispatch a subagent for an adversarial review”) and read their discussion.  
+     
+   If you can't do any of these, figure out how to decompose the task into steps that can be validated. Or simply try working on something else.
+
+3. **Run many AIs.** Agents take long to reply. Don't stand still waiting for them. Think of anything else you can do to improve the final output, and Cmd/Ctrl \+ N a new session to do it.  
+     
+   While I was preparing this session I ran Claude Code agents in parallel to:  
+   1. Export my demo Claude conversation [to a website](https://demo-site-amber-seven.vercel.app/)  
+   2. Investigate role counts at CEA to come up with example tasks to suggest  
+   3. Polish the writing style copying from a previous tutorial I had made  
+   4. Double-check instructions for installing the Claude/Codex desktop apps
+
+   
+
+   If a single task is too large, ask it to “do it with subagents.”
+
+4. **Save everything**. You can't verify what you don't see. Also, if something is good, you want to reuse it.   
+     
+   Ask agents to save your initial plan, any intermediate outputs, and the final results. These can be book-length, so specify summaries, tables, or lists that make their outputs easy to skim for you.  
+     
+   Often I start a Claude Code session with a long ramble on what I want, tacking on “ask me lots of questions to clarify ambiguities” at the end. We then do 3-4 rounds of back and forth, which I end by asking it to draft a [CLAUDE.md](http://CLAUDE.md) with context and design decisions that I expect to change rarely, and a [DESIGN.md](http://DESIGN.md) for the main plan we'll 

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Claude On-ramp</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topnav">
+    <a class="brand" href="#/1/1">
+      <span class="brand-mark">✳</span>
+      <span class="brand-name">Claude On-ramp</span>
+    </a>
+    <nav class="topnav-links">
+      <a href="#/1/1">Lessons <span class="chev">⌄</span></a>
+      <a href="#">Voice <span class="chev">⌄</span></a>
+      <a href="#">Archive</a>
+      <a href="#">About</a>
+    </nav>
+    <div class="avatar" title="You">A</div>
+  </header>
+
+  <div class="layout" id="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-scroll">
+        <div class="course-head">
+          <div class="course-icon">✳</div>
+          <div>
+            <div class="course-title">Claude On-ramp</div>
+            <div class="course-progress" id="course-progress">0% completed</div>
+          </div>
+        </div>
+        <nav id="unit-nav"></nav>
+      </div>
+      <a class="sidebar-cta" href="#">
+        <div>
+          <div class="cta-title">Build your site with Claude</div>
+          <div class="cta-sub">One project, every lesson</div>
+        </div>
+        <span class="cta-arrow">→</span>
+      </a>
+    </aside>
+
+    <main class="main">
+      <div class="crumbbar">
+        <button class="hide-btn" id="hide-btn"><span class="hamburger">☰</span> Hide</button>
+        <div class="crumb-divider"></div>
+        <nav class="crumbs" id="crumbs"></nav>
+        <div class="crumb-nav">
+          <button id="prev-btn" class="pn-btn">← Prev</button>
+          <button id="next-btn" class="pn-btn">Next →</button>
+        </div>
+      </div>
+
+      <div class="lesson-scroll" id="lesson-scroll">
+        <article class="lesson" id="lesson"></article>
+        <div id="comments-rail"></div>
+        <footer class="lesson-footer">
+          <span class="footer-item">⌘ Shortcuts</span>
+          <span class="footer-item">Report a bug</span>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <div id="comment-pill" class="comment-pill" hidden>
+    <button id="pill-btn">＋ Comment</button>
+  </div>
+
+  <div id="comment-popover" class="comment-popover" hidden>
+    <textarea id="popover-text" placeholder="Add a comment…" rows="3"></textarea>
+    <div class="popover-actions">
+      <button id="popover-cancel" class="btn-ghost">Cancel</button>
+      <button id="popover-submit" class="btn-primary" disabled>Comment</button>
+    </div>
+  </div>
+
+  <script src="content.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

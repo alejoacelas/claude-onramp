@@ -1,0 +1,77 @@
+{
+  "docs": {
+    "1_RoXpQGHCfwvdCxfl0fldI8lp_FnplDVYkLcqONpXOI": {
+      "title": "Use AI",
+      "tab_order": [
+        "think",
+        "understand",
+        "ease",
+        "mingle",
+        "stop",
+        "ground",
+        "context?",
+        "ending"
+      ],
+      "last_modified_time": "2026-07-07T13:26:46.976Z",
+      "last_synced": "2026-07-07",
+      "forms": [
+        {
+          "tab": "think",
+          "tab_path": "think",
+          "out": "lessons/think/notes.md",
+          "form": "lesson notes",
+          "sha256": "30570d1fc0045927dfbd9e4da62b17e646ac5f0c2449ca1684ca02332dae5ec8"
+        },
+        {
+          "tab": "understand",
+          "tab_path": "understand",
+          "out": "lessons/understand/notes.md",
+          "form": "lesson notes",
+          "sha256": "63ca123c2fc8b6ae48854cb0961b606301bf011c101962cd5100c65dc871648e"
+        },
+        {
+          "tab": "ease",
+          "tab_path": "ease",
+          "out": "lessons/ease/notes.md",
+          "form": "lesson notes",
+          "sha256": "8a3ab7d15ab0a33c32fd09293d37b8e612a4a65e168f57b49460af8cfffb3599"
+        },
+        {
+          "tab": "mingle",
+          "tab_path": "mingle",
+          "out": "lessons/mingle/notes.md",
+          "form": "lesson notes",
+          "sha256": "9cdea671b35a605dffd39b11ee2accbd1dddac0954c68812d9319dbf3d276525"
+        },
+        {
+          "tab": "stop",
+          "tab_path": "stop",
+          "out": "lessons/stop/notes.md",
+          "form": "lesson notes",
+          "sha256": "5eea88328003454f2791928b53d7833f63f01fa7866d5a0d0415987b9dce5627"
+        },
+        {
+          "tab": "ground",
+          "tab_path": "ground",
+          "out": "lessons/ground/notes.md",
+          "form": "lesson notes",
+          "sha256": "a01a40344c53dd518d2e3b606d5e4513545333c36183f27c416e4c718ef831d5"
+        },
+        {
+          "tab": "context?",
+          "tab_path": "context?",
+          "out": "lessons/context/notes.md",
+          "form": "lesson notes",
+          "sha256": "c149f3b8ae61fefcdcd1268a3b6fbf0eb1139652bb4f6c5e323c3f7d611fd4a2"
+        },
+        {
+          "tab": "ending",
+          "tab_path": "ending",
+          "out": "lessons/ending/notes.md",
+          "form": "lesson notes",
+          "sha256": "14ee55f4b459316392adbcc0f233ff7624b6c38e6b92d4cb305d9e88e9278f1d"
+        }
+      ]
+    }
+  }
+}
