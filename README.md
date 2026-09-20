@@ -3,7 +3,7 @@ How do we write an introduction to delegating work to Claude that people actuall
 # Claude on-ramp
 
 Two attempts so far, both discarded: the first guide (deleted 2026-07-04, in git
-history) and the staged-pipeline rebuild (moved to `archive/` on 2026-07-05). Both
+history) and the staged-pipeline rebuild (deleted 2026-09-20, in git history). Both
 failed on the writing. This round starts from voice and drafts each lesson by hand:
 
 - `voice/` — Alejo's own writing on the topic at top level (the voice reference),
@@ -18,4 +18,3 @@ failed on the writing. This round starts from voice and drafts each lesson by ha
   website. The lesson text walks them through a narrative with examples drawn from
   the real activity; only at the end are they told "now it's time for you to take
   action" and given explicit instructions.
-- `archive/` — the discarded pipeline stages, kept for salvage.

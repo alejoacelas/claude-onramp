@@ -5,7 +5,7 @@ lesson files in it.
 
 The reader is smart, non-technical, and alone. If a step can fail and the lesson
 doesn't say what failure looks like, the lesson failed, not the reader. The model
-is Peter Hartree's instruction posts (`work/writing/later/ph/`, e.g. the Google
+is Peter Hartree's instruction posts (`~/best/writing/ai/peter-hartree-ai-journal/`, e.g. the Google
 Cloud setup one): short sentences, numbered steps, the critical gotcha bolded —
 but with the step-by-step detail he skips.
 
